@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbs1w20t7crln"]
+
+[ext_resource type="Texture2D" uid="uid://bgm2y12rapmss" path="res://art/background.jpg" id="1_emd4w"]
+
+[node name="new_scene" type="Node"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(1670, 327)
+scale = Vector2(2.58, 1.62)
+texture = ExtResource("1_emd4w")

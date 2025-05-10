@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var move_speed: float = 100.0
-@export var move_direction: Vector2 = Vector2.LEFT
+@export var move_direction: Vector2 = Vector2.RIGHT
 @export var move_distance: float = 200.0  # How far to move
 
 var is_moving: bool = false

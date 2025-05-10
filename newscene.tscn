@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqiv3k6rsskbo"]
+
+[node name="newscene1" type="Node2D"]
+
+[node name="background" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+offset_right = 600.0
+offset_bottom = 200.0
+color = Color(0.215686, 1, 0.270588, 0.419608)
+
+[node name="ColorRect2" type="ColorRect" parent="background"]
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 400.0
+color = Color(0.825731, 0.309286, 0.280125, 0.419608)
+
+[node name="ColorRect3" type="ColorRect" parent="background"]
+offset_top = 400.0
+offset_right = 600.0
+offset_bottom = 600.0
+color = Color(0.247059, 0.380392, 0.905882, 0.901961)
+
+[node name="Camera2D" type="Camera2D" parent="."]
