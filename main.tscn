@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=12 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
@@ -7,36 +7,73 @@
 [ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="5_lquwl"]
-[ext_resource type="Texture2D" uid="uid://5jnrv0vdl7nf" path="res://art/PawnShop_lantern_v5.png" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cdlodrvv60xiq" path="res://art/dialoguebox.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://e52pafp2x13u" path="res://art/witchportrait.png" id="10_efxa6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4c57u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycdy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_efxa6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(16, 22)
+position = Vector2(-3, -3)
 script = ExtResource("5_lquwl")
 
 [node name="background-back" type="Sprite2D" parent="."]
-position = Vector2(981, 26)
+position = Vector2(962, 1)
 texture = ExtResource("4_272bh")
 
 [node name="background-middle" type="Sprite2D" parent="."]
-position = Vector2(984, 26)
+position = Vector2(965, 1)
 texture = ExtResource("5_5vw27")
 
 [node name="background-front" type="Sprite2D" parent="."]
-position = Vector2(-936, -514)
+position = Vector2(-955, -539)
 texture = ExtResource("2_1bvp3")
 centered = false
 script = ExtResource("3_1bvp3")
 metadata/_edit_group_ = true
 
 [node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(-1210, -84)
+position = Vector2(-1229, -109)
 scale = Vector2(3, 3)
 move_speed = 350.0
 move_distance = 1000.0
 
-[node name="lantern" type="Sprite2D" parent="."]
-position = Vector2(248, -337)
-texture = ExtResource("8_5vw27")
+[node name="ChatWitch" type="CanvasLayer" parent="."]
+
+[node name="WitchChatBox" type="AnimatedSprite2D" parent="ChatWitch"]
+position = Vector2(-2, 396)
+sprite_frames = SubResource("SpriteFrames_dg77c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChatWitch/WitchChatBox"]
+z_index = 3
+position = Vector2(-711, -1)
+scale = Vector2(0.465745, 0.49366)
+sprite_frames = SubResource("SpriteFrames_ycdy4")
+
+[node name="Witch_1" type="RichTextLabel" parent="ChatWitch/WitchChatBox"]
+offset_left = -152.0
+offset_right = -112.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
