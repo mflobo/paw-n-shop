@@ -9,6 +9,12 @@ func pan_camera_right():
 	var new_position = camera.position + Vector2(1915, 0) 
 	camera.position = new_position
 
+#Move camera 1915 px to the left
+func pan_camera_left():
+	var camera = $Camera2D
+	var new_position = camera.position - Vector2(1915, 0) 
+	camera.position = new_position
+	
 #Function to run tutorial
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -19,5 +25,7 @@ func _unhandled_input(event):
 		#Pan camera to the right
 		elif click_count == 2:
 			pan_camera_right()
+		elif click_count == 3: 
+			pan_camera_left()
 	
 	
