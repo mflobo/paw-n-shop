@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dprjcjyaxwnjp" path="res://customer.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dwergnwhs1871" path="res://camera_2d.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cdlodrvv60xiq" path="res://art/dialoguebox.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://e52pafp2x13u" path="res://art/witchportrait.png" id="10_efxa6"]
 
@@ -61,19 +61,30 @@ move_speed = 350.0
 move_distance = 1000.0
 
 [node name="ChatWitch" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="WitchChatBox" type="AnimatedSprite2D" parent="ChatWitch"]
-position = Vector2(-2, 396)
+position = Vector2(-879, 237)
 sprite_frames = SubResource("SpriteFrames_dg77c")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChatWitch/WitchChatBox"]
 z_index = 3
-position = Vector2(-711, -1)
+position = Vector2(135, 137)
 scale = Vector2(0.465745, 0.49366)
 sprite_frames = SubResource("SpriteFrames_ycdy4")
 
 [node name="Witch_1" type="RichTextLabel" parent="ChatWitch/WitchChatBox"]
-offset_left = -152.0
-offset_right = -112.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_left = -0.0460993
+anchor_right = 0.718676
+anchor_bottom = 0.387755
+offset_left = 353.0
+offset_top = 58.0
+offset_right = 393.0
+offset_bottom = 98.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+fit_content = true
 metadata/_edit_use_anchors_ = true
