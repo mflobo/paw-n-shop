@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=9 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://5jnrv0vdl7nf" path="res://art/PawnShop_lantern_v5.png" id="8_5vw27"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -35,3 +36,7 @@ position = Vector2(-1210, -84)
 scale = Vector2(3, 3)
 move_speed = 350.0
 move_distance = 1000.0
+
+[node name="lantern" type="Sprite2D" parent="."]
+position = Vector2(248, -337)
+texture = ExtResource("8_5vw27")
