@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2vvbg5vurwqc"]
+
+[ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="1_auti2"]
+[ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="2_3ip43"]
+[ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="3_as4r2"]
+
+[node name="Workshop" type="Node2D"]
+
+[node name="background-window" type="Sprite2D" parent="."]
+texture = ExtResource("1_auti2")
+
+[node name="background-middle" type="Sprite2D" parent="."]
+texture = ExtResource("2_3ip43")
+
+[node name="background-front" type="Sprite2D" parent="."]
+texture = ExtResource("3_as4r2")
