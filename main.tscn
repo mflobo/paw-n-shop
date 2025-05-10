@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=5 format=3 uid="uid://dukx77fpt5bi"]
+
+[ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bgm2y12rapmss" path="res://art/background.jpg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bf2gubdbo1qt" path="res://sprite_2d.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dprjcjyaxwnjp" path="res://customer.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(573, 324.938)
+scale = Vector2(2.87391, 1.60031)
+texture = ExtResource("2_h2yge")
+script = ExtResource("3_1bvp3")
+metadata/_edit_group_ = true
+
+[node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(1251, 163)
+scale = Vector2(3, 3)
+move_distance = 700.0
