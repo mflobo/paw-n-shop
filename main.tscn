@@ -1,12 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=10 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://bf2gubdbo1qt" path="res://sprite_2d.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dprjcjyaxwnjp" path="res://customer.tscn" id="3_h2yge"]
-[ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
-[ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dwergnwhs1871" path="res://camera_2d.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://f1bfba0mhjt5" path="res://art/dialoguebox.png" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://cio0vmlwpwt8b" path="res://art/witchportrait.png" id="7_5vw27"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_272bh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_272bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5vw27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -31,7 +53,52 @@ script = ExtResource("3_1bvp3")
 metadata/_edit_group_ = true
 
 [node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(-1210, -84)
+position = Vector2(-261, 441)
 scale = Vector2(3, 3)
 move_speed = 350.0
 move_distance = 1000.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(965, 547)
+script = ExtResource("5_lquwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 1)
+texture = ExtResource("2_1bvp3")
+centered = false
+script = ExtResource("3_1bvp3")
+metadata/_edit_group_ = true
+
+[node name="ChatWitch" type="CanvasLayer" parent="."]
+
+[node name="WitchChatBox" type="AnimatedSprite2D" parent="ChatWitch"]
+visible = false
+position = Vector2(940, 938)
+scale = Vector2(0.975864, 0.914966)
+sprite_frames = SubResource("SpriteFrames_kek77")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ChatWitch/WitchChatBox"]
+position = Vector2(-714.797, -0.546478)
+scale = Vector2(0.448937, 0.444906)
+sprite_frames = SubResource("SpriteFrames_272bh")
+
+[node name="Witch_1" type="RichTextLabel" parent="ChatWitch/WitchChatBox"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -1.0
+anchor_right = 0.5
+anchor_bottom = -1.0
+offset_left = -1390.0
+offset_top = 200.0
+offset_right = -114.0
+offset_bottom = 393.0
+bbcode_enabled = true
+text = "[color=#271415][font_size=40]Witch: Hey! I am looking for someone to fix my broken jar. "
+autowrap_mode = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ChatTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
