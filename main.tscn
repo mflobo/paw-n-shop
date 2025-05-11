@@ -51,10 +51,13 @@ script = ExtResource("1_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-3, -3)
+offset = Vector2(0, 10)
+zoom = Vector2(1.02, 1.02)
 script = ExtResource("5_lquwl")
 
 [node name="background_outside" type="Sprite2D" parent="."]
-position = Vector2(74, -191)
+position = Vector2(74, -175.75)
+scale = Vector2(1, 0.959387)
 texture = ExtResource("3_yaehf")
 offset = Vector2(-120, 0)
 
@@ -65,7 +68,7 @@ move_speed = 350.0
 move_distance = 1000.0
 
 [node name="background_back" type="Sprite2D" parent="."]
-position = Vector2(962, 1)
+position = Vector2(963, -5)
 texture = ExtResource("4_272bh")
 
 [node name="background_middle" type="Sprite2D" parent="."]
@@ -87,7 +90,7 @@ texture = ExtResource("10_2cqfq")
 flip_h = true
 
 [node name="shadow" type="Sprite2D" parent="."]
-position = Vector2(967, 1)
+position = Vector2(967, 14)
 texture = ExtResource("7_ycdy4")
 
 [node name="lightshadow" type="Sprite2D" parent="."]

@@ -1,31 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8lyt2pmk8h3r"]
+[gd_scene load_steps=5 format=3 uid="uid://c8lyt2pmk8h3r"]
 
 [ext_resource type="Script" uid="uid://ccp0crwj8abrw" path="res://label.gd" id="1_64ctp"]
-[ext_resource type="Texture2D" uid="uid://cdlodrvv60xiq" path="res://art/dialoguebox.png" id="2_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://cjnacce6j0g1d" path="res://art/rightdialogue.png" id="1_640wx"]
+[ext_resource type="Texture2D" uid="uid://biq5fo4ekv7ad" path="res://art/Coin.png" id="2_640wx"]
+[ext_resource type="Texture2D" uid="uid://dkq2quwmobqs3" path="res://art/leftdialogue.png" id="2_a2258"]
 
 [node name="HUD" type="CanvasLayer"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 38.0
-offset_top = 43.0
-offset_right = 203.0
-offset_bottom = 132.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(128.439, 66.25)
+scale = Vector2(0.492337, 0.492337)
+texture = ExtResource("2_a2258")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 166.0
+offset_top = 36.0
+offset_right = 331.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.101961, 0.00784314, 0.0666667, 1)
 theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("1_64ctp")
 
-[node name="MenuButton" type="MenuButton" parent="."]
-offset_left = 1521.0
-offset_top = 36.0
-offset_right = 1784.0
-offset_bottom = 137.0
-theme_override_font_sizes/font_size = 40
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Label"]
+position = Vector2(-94, 31)
+scale = Vector2(0.38, 0.298438)
+texture = ExtResource("2_640wx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Label"]
+position = Vector2(1609, 37)
+scale = Vector2(0.532922, 0.532922)
+texture = ExtResource("1_640wx")
+
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer/Label/Sprite2D2"]
+offset_left = -273.961
+offset_top = -125.722
+offset_right = 279.039
+offset_bottom = 107.278
+theme_override_colors/font_color = Color(0.101961, 0.00784314, 0.0666667, 1)
+theme_override_font_sizes/font_size = 72
 text = "MENU"
-
-[node name="Dialoguebox" type="Sprite2D" parent="."]
-position = Vector2(2599, 593)
-texture = ExtResource("2_8sq4i")
-
-[node name="Dialoguebox2" type="Sprite2D" parent="."]
-position = Vector2(2823, 988)
-texture = ExtResource("2_8sq4i")
