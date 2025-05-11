@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=25 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
@@ -17,6 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://dsqttjoqifsnj" path="res://art/PawnShop_Light_2.png" id="14_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://da81ivh8ei3p6" path="res://art/Paint_Bottles.png" id="15_yaehf"]
 [ext_resource type="Texture2D" uid="uid://coolxw2bq4073" path="res://art/Polish.png" id="16_074og"]
+[ext_resource type="AudioStream" uid="uid://dtsb0twdu0qy5" path="res://sounds/Wood_openWithBell.mp3" id="18_074og"]
+[ext_resource type="AudioStream" uid="uid://cbubqrr8068hi" path="res://sounds/Music&Ambience_STEREO_01.mp3" id="18_getpj"]
+[ext_resource type="AudioStream" uid="uid://c1hnxd7i268qk" path="res://sounds/Footsteps_Witch_02.mp3" id="19_82xsv"]
+[ext_resource type="AudioStream" uid="uid://byctg7oyo4xbe" path="res://sounds/Voice_Witch_01.mp3" id="21_ryguw"]
+[ext_resource type="AudioStream" uid="uid://0mys3wvsnaaw" path="res://sounds/Wood_openNoImpact.mp3" id="22_ryguw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
 animations = [{
@@ -50,9 +55,10 @@ script = ExtResource("5_lquwl")
 [node name="background_outside" type="Sprite2D" parent="."]
 position = Vector2(74, -191)
 texture = ExtResource("3_yaehf")
+offset = Vector2(-120, 0)
 
 [node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(-1229, -109)
+position = Vector2(-922, -163)
 scale = Vector2(3, 3)
 move_speed = 350.0
 move_distance = 1000.0
@@ -62,11 +68,13 @@ position = Vector2(962, 1)
 texture = ExtResource("4_272bh")
 
 [node name="background_middle" type="Sprite2D" parent="."]
-position = Vector2(965, 1)
+position = Vector2(962, 1)
+scale = Vector2(1.00156, 1)
 texture = ExtResource("5_5vw27")
 
 [node name="background_front" type="Sprite2D" parent="."]
-position = Vector2(-955, -539)
+position = Vector2(-964, -539)
+scale = Vector2(1.00234, 1)
 texture = ExtResource("2_1bvp3")
 centered = false
 script = ExtResource("3_1bvp3")
@@ -104,8 +112,8 @@ metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChatWitch/WitchChatBox"]
 z_index = 3
-position = Vector2(135, 137)
-scale = Vector2(0.465745, 0.49366)
+position = Vector2(133.5, 144.5)
+scale = Vector2(0.463942, 0.46283)
 sprite_frames = SubResource("SpriteFrames_ycdy4")
 
 [node name="Witch_1" type="RichTextLabel" parent="ChatWitch/WitchChatBox"]
@@ -117,7 +125,8 @@ offset_left = 353.0
 offset_top = 58.0
 offset_right = 393.0
 offset_bottom = 98.0
-theme_override_font_sizes/normal_font_size = 30
+theme_override_colors/default_color = Color(0.101961, 0.00784314, 0.0666667, 1)
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 fit_content = true
 metadata/_edit_use_anchors_ = true
@@ -133,3 +142,22 @@ texture = ExtResource("15_yaehf")
 [node name="polish" type="Sprite2D" parent="."]
 position = Vector2(2101, 205)
 texture = ExtResource("16_074og")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_getpj")
+volume_db = 0.882
+autoplay = true
+
+[node name="HatchOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_074og")
+volume_db = 3.562
+
+[node name="WitchWalk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_82xsv")
+volume_db = 0.5
+
+[node name="WitchVoice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ryguw")
+
+[node name="PanningSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_ryguw")

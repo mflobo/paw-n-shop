@@ -10,7 +10,7 @@ var witch_lines: Array[String] = [
 	"Witch: Hey! I am looking for someone to fix my broken jar.",
 	"An imbecile in a trenchcoat bumped into me yesterday and now the jar is in a thousand pieces!",
 	"Bah stupid cats, they never look where they are walking - always clumsy and…",
-	"oh I am so sorry, I really didn’t mean that, I LOOOVE CATS!",
+	"oh I am so sorry, I really didn’t mean that, I LOOOVE YOU CATS!",
 	"Anyways, really need this jar restored, think you can fix it?"
 ]
 
@@ -50,6 +50,7 @@ func pan_camera_to_shop():
 
 # --- NEW: Function to handle the window opening effect ---
 func trigger_window_effect():
+	$HatchOpen.play()
 	print("Triggering window effect...")
 	if background_back_node:
 		background_back_node.visible = false
@@ -90,6 +91,8 @@ func _unhandled_input(event: InputEvent):
 			
 			GameState.DIALOGUE_SETUP:
 				if click_count == 1: # This is now the second click overall
+					$WitchWalk.play()
+					$WitchVoice.play()
 					if customer_1_node:
 						customer_1_node.is_moving = true # Or however you trigger movement
 					current_game_state = GameState.WITCH_DIALOGUE
@@ -104,7 +107,7 @@ func _unhandled_input(event: InputEvent):
 
 			GameState.WITCH_DIALOGUE:
 				current_line += 1 # Assumes each click in this state advances dialogue
-				if witch_chat_container_node and witch_dialogue_label_node:
+				if witch_chat_container_node and witch_dialogue_label_node:						
 					if not witch_chat_container_node.visible : # If somehow hidden, reshow
 						witch_chat_container_node.visible = true
 						
@@ -113,6 +116,7 @@ func _unhandled_input(event: InputEvent):
 					else: # Dialogue finished
 						if witch_chat_container_node:
 							witch_chat_container_node.visible = false
+						$PanningSound.play()
 						pan_camera_to_workshop()
 						current_game_state = GameState.IN_WORKSHOP
 						click_count = 0
