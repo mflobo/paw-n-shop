@@ -11,7 +11,7 @@
 size = Vector2(771, 426)
 
 [node name="Jar" type="RigidBody2D"]
-gravity_scale = 2.0
+gravity_scale = 0.314
 script = ExtResource("1_8fgap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
