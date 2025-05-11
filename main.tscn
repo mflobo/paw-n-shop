@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=26 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://c1hnxd7i268qk" path="res://sounds/Footsteps_Witch_02.mp3" id="19_82xsv"]
 [ext_resource type="AudioStream" uid="uid://byctg7oyo4xbe" path="res://sounds/Voice_Witch_01.mp3" id="21_ryguw"]
 [ext_resource type="AudioStream" uid="uid://0mys3wvsnaaw" path="res://sounds/Wood_openNoImpact.mp3" id="22_ryguw"]
+[ext_resource type="PackedScene" uid="uid://c8lyt2pmk8h3r" path="res://hud.tscn" id="23_d13ii"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
 animations = [{
@@ -161,3 +162,8 @@ stream = ExtResource("21_ryguw")
 
 [node name="PanningSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_ryguw")
+
+[node name="HUD" parent="." instance=ExtResource("23_d13ii")]
+offset = Vector2(-1000, -600)
+transform = Transform2D(1, 0, 0, 1, -1000, -600)
+follow_viewport_enabled = true
