@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=19 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
@@ -7,8 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
 [ext_resource type="Script" uid="uid://dwergnwhs1871" path="res://camera_2d.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://ddxb5b34n2x0y" path="res://art/PawnShop_Shadow_1.png" id="7_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://dj8lpkumquj2i" path="res://art/PawnShop_Light_1.png" id="8_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cdlodrvv60xiq" path="res://art/dialoguebox.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://b7r616uu86xvi" path="res://art/PawnShop_String_v5.png" id="9_vivmo"]
+[ext_resource type="Texture2D" uid="uid://5jnrv0vdl7nf" path="res://art/PawnShop_lantern_v5.png" id="10_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://e52pafp2x13u" path="res://art/witchportrait.png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dsqttjoqifsnj" path="res://art/PawnShop_Light_2.png" id="14_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://da81ivh8ei3p6" path="res://art/Paint_Bottles.png" id="15_yaehf"]
+[ext_resource type="Texture2D" uid="uid://coolxw2bq4073" path="res://art/Polish.png" id="16_074og"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
 animations = [{
@@ -54,6 +61,27 @@ centered = false
 script = ExtResource("3_1bvp3")
 metadata/_edit_group_ = true
 
+[node name="lantern-workshop" type="Sprite2D" parent="."]
+position = Vector2(2316, -363)
+texture = ExtResource("10_2cqfq")
+flip_h = true
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(967, 1)
+texture = ExtResource("7_ycdy4")
+
+[node name="lightshadow" type="Sprite2D" parent="."]
+position = Vector2(964, 0)
+texture = ExtResource("8_w48qg")
+
+[node name="lanternrope" type="Sprite2D" parent="."]
+position = Vector2(60, -383)
+texture = ExtResource("9_vivmo")
+
+[node name="lantern" type="Sprite2D" parent="."]
+position = Vector2(221, -368)
+texture = ExtResource("10_2cqfq")
+
 [node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(-1229, -109)
 scale = Vector2(3, 3)
@@ -88,3 +116,15 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 fit_content = true
 metadata/_edit_use_anchors_ = true
+
+[node name="light-workshop" type="Sprite2D" parent="."]
+position = Vector2(2947, -3)
+texture = ExtResource("14_2cqfq")
+
+[node name="paint-bottles" type="Sprite2D" parent="."]
+position = Vector2(2443, 149)
+texture = ExtResource("15_yaehf")
+
+[node name="polish" type="Sprite2D" parent="."]
+position = Vector2(2101, 205)
+texture = ExtResource("16_074og")
