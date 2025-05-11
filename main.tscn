@@ -164,6 +164,6 @@ stream = ExtResource("21_ryguw")
 stream = ExtResource("22_ryguw")
 
 [node name="HUD" parent="." instance=ExtResource("23_d13ii")]
-offset = Vector2(-1000, -600)
-transform = Transform2D(1, 0, 0, 1, -1000, -600)
+offset = Vector2(10000, -600)
+transform = Transform2D(1, 0, 0, 1, 10000, -600)
 follow_viewport_enabled = true
