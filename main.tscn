@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dukx77fpt5bi"]
+[gd_scene load_steps=20 format=3 uid="uid://dukx77fpt5bi"]
 
 [ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://bf2gubdbo1qt" path="res://sprite_2d.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dprjcjyaxwnjp" path="res://customer.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://daothkc6ess78" path="res://art/PawnShop_BackgroundOutside.png" id="3_yaehf"]
 [ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
 [ext_resource type="Script" uid="uid://dwergnwhs1871" path="res://camera_2d.gd" id="5_lquwl"]
@@ -46,22 +47,32 @@ script = ExtResource("1_0xm2m")
 position = Vector2(-3, -3)
 script = ExtResource("5_lquwl")
 
-[node name="background-back" type="Sprite2D" parent="."]
+[node name="background_outside" type="Sprite2D" parent="."]
+position = Vector2(74, -191)
+texture = ExtResource("3_yaehf")
+
+[node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(-1229, -109)
+scale = Vector2(3, 3)
+move_speed = 350.0
+move_distance = 1000.0
+
+[node name="background_back" type="Sprite2D" parent="."]
 position = Vector2(962, 1)
 texture = ExtResource("4_272bh")
 
-[node name="background-middle" type="Sprite2D" parent="."]
+[node name="background_middle" type="Sprite2D" parent="."]
 position = Vector2(965, 1)
 texture = ExtResource("5_5vw27")
 
-[node name="background-front" type="Sprite2D" parent="."]
+[node name="background_front" type="Sprite2D" parent="."]
 position = Vector2(-955, -539)
 texture = ExtResource("2_1bvp3")
 centered = false
 script = ExtResource("3_1bvp3")
 metadata/_edit_group_ = true
 
-[node name="lantern-workshop" type="Sprite2D" parent="."]
+[node name="lantern_workshop" type="Sprite2D" parent="."]
 position = Vector2(2316, -363)
 texture = ExtResource("10_2cqfq")
 flip_h = true
@@ -81,12 +92,6 @@ texture = ExtResource("9_vivmo")
 [node name="lantern" type="Sprite2D" parent="."]
 position = Vector2(221, -368)
 texture = ExtResource("10_2cqfq")
-
-[node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(-1229, -109)
-scale = Vector2(3, 3)
-move_speed = 350.0
-move_distance = 1000.0
 
 [node name="ChatWitch" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -117,11 +122,11 @@ bbcode_enabled = true
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="light-workshop" type="Sprite2D" parent="."]
+[node name="light_workshop" type="Sprite2D" parent="."]
 position = Vector2(2947, -3)
 texture = ExtResource("14_2cqfq")
 
-[node name="paint-bottles" type="Sprite2D" parent="."]
+[node name="paint_bottles" type="Sprite2D" parent="."]
 position = Vector2(2443, 149)
 texture = ExtResource("15_yaehf")
 
