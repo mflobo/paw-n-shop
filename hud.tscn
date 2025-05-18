@@ -25,8 +25,8 @@ text = "0"
 script = ExtResource("1_64ctp")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Label"]
-position = Vector2(-94, 31)
-scale = Vector2(0.38, 0.298438)
+position = Vector2(-94.5, 31)
+scale = Vector2(0.4075, 0.298438)
 texture = ExtResource("2_640wx")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Label"]

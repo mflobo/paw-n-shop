@@ -1,0 +1,117 @@
+[gd_scene load_steps=19 format=3 uid="uid://cyq3vwf137ur6"]
+
+[ext_resource type="Script" uid="uid://lidi2ni6anx7" path="res://node_2d.gd" id="1_ahdl1"]
+[ext_resource type="Texture2D" uid="uid://bn41nlslv04q7" path="res://art/jarpuzzle_background.png" id="2_b5pli"]
+[ext_resource type="Script" uid="uid://brb8udexdr08j" path="res://jar_piece_1.gd" id="2_ydcng"]
+[ext_resource type="Texture2D" uid="uid://5mf4lhdh203v" path="res://art/Marataban_Whole.png" id="3_83m4n"]
+[ext_resource type="Texture2D" uid="uid://ck2k3puhrknoo" path="res://art/Marataban_Piece_1.png" id="3_wtsin"]
+[ext_resource type="Script" uid="uid://cs2cvacosoo0b" path="res://jar_piece_2.gd" id="4_p2sh8"]
+[ext_resource type="Texture2D" uid="uid://bfa2vasme8tk1" path="res://art/Marataban_Piece_2.png" id="5_dh2a6"]
+[ext_resource type="Texture2D" uid="uid://bfow3cxk4vxiw" path="res://art/Marataban_Piece_3.png" id="6_0xlfm"]
+[ext_resource type="Script" uid="uid://x1pyeq5gudv" path="res://jar_piece_3.gd" id="6_dh2a6"]
+[ext_resource type="Texture2D" uid="uid://de5wgck1w4qx6" path="res://art/Marataban_Piece_4.png" id="7_k6wdo"]
+[ext_resource type="Script" uid="uid://cjxj0fgdvtdna" path="res://jar_piece_4.gd" id="8_0xlfm"]
+[ext_resource type="Texture2D" uid="uid://brj415o5ck7ne" path="res://art/Marataban_Piece_5.png" id="8_b5pli"]
+[ext_resource type="Script" uid="uid://cp1o1crfaepsd" path="res://jar_piece_5.gd" id="10_k6wdo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6wdo"]
+radius = 74.0
+height = 220.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5pli"]
+radius = 118.0
+height = 236.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83m4n"]
+radius = 124.0
+height = 254.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21v21"]
+radius = 95.0
+height = 206.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aj45v"]
+radius = 129.0
+height = 280.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ahdl1")
+
+[node name="JarpuzzleBackground" type="Sprite2D" parent="."]
+position = Vector2(2061, 754)
+scale = Vector2(1.12422, 1.51296)
+texture = ExtResource("2_b5pli")
+
+[node name="puzzleframe" type="Node" parent="JarpuzzleBackground"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="JarpuzzleBackground/puzzleframe"]
+
+[node name="MaratabanWhole" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.27451)
+position = Vector2(984, 494)
+texture = ExtResource("3_83m4n")
+
+[node name="jar_piece1" type="Area2D" parent="."]
+position = Vector2(340, 647)
+script = ExtResource("2_ydcng")
+goal_position = Vector2(-184, 342)
+
+[node name="MaratabanPiece1" type="Sprite2D" parent="jar_piece1"]
+position = Vector2(1165, 156)
+texture = ExtResource("3_wtsin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar_piece1"]
+position = Vector2(1042, 147)
+shape = SubResource("CapsuleShape2D_k6wdo")
+
+[node name="jar_piece2" type="Area2D" parent="."]
+position = Vector2(843, 697)
+script = ExtResource("4_p2sh8")
+goal_position = Vector2(615, -84)
+
+[node name="MaratabanPiece2" type="Sprite2D" parent="jar_piece2"]
+position = Vector2(-498, 198)
+texture = ExtResource("5_dh2a6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar_piece2"]
+position = Vector2(-505, 106)
+shape = SubResource("CapsuleShape2D_b5pli")
+
+[node name="jar_piece3" type="Area2D" parent="."]
+position = Vector2(11, 63)
+script = ExtResource("6_dh2a6")
+goal_position = Vector2(580, 250)
+
+[node name="MaratabanPiece3" type="Sprite2D" parent="jar_piece3"]
+position = Vector2(394, 243)
+texture = ExtResource("6_0xlfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar_piece3"]
+position = Vector2(433, 225)
+shape = SubResource("CapsuleShape2D_83m4n")
+
+[node name="jar_piece4" type="Area2D" parent="."]
+position = Vector2(700, -22)
+script = ExtResource("8_0xlfm")
+goal_position = Vector2(213, 134)
+
+[node name="MaratabanPiece4" type="Sprite2D" parent="jar_piece4"]
+position = Vector2(765, 360)
+texture = ExtResource("7_k6wdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar_piece4"]
+position = Vector2(851, 437)
+shape = SubResource("CapsuleShape2D_21v21")
+
+[node name="jar_piece5" type="Area2D" parent="."]
+position = Vector2(593, -528)
+script = ExtResource("10_k6wdo")
+goal_position = Vector2(334, -97)
+
+[node name="MaratabanPiece5" type="Sprite2D" parent="jar_piece5"]
+position = Vector2(648, 591)
+texture = ExtResource("8_b5pli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar_piece5"]
+position = Vector2(606, 711)
+shape = SubResource("CapsuleShape2D_aj45v")

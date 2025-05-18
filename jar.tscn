@@ -8,42 +8,53 @@
 [ext_resource type="Texture2D" uid="uid://brj415o5ck7ne" path="res://art/Marataban_Piece_5.png" id="6_h3mue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpc4e"]
-size = Vector2(771, 426)
+size = Vector2(732, 446)
 
 [node name="Jar" type="RigidBody2D"]
-gravity_scale = 2.0
+mass = 0.119
+gravity_scale = 0.0
 script = ExtResource("1_8fgap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(980.5, -400)
+position = Vector2(1178, 454)
 shape = SubResource("RectangleShape2D_qpc4e")
 
 [node name="jarpieces" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 572.0
-offset_top = -626.0
-offset_right = 1376.0
-offset_bottom = -170.0
+offset_left = 797.0
+offset_top = 230.0
+offset_right = 1544.0
+offset_bottom = 561.0
 
 [node name="MaratabanPiece1" type="Sprite2D" parent="jarpieces"]
-position = Vector2(214, 135)
+position = Vector2(89, 189)
+rotation = -1.61094
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("2_r1ggn")
 
 [node name="MaratabanPiece2" type="Sprite2D" parent="jarpieces"]
-position = Vector2(678, 209)
+position = Vector2(381, 207)
+rotation = 3.1573
+scale = Vector2(0.67875, 0.67875)
 texture = ExtResource("3_8c3b4")
 
 [node name="MaratabanPiece3" type="Sprite2D" parent="jarpieces"]
-position = Vector2(330, 123)
+position = Vector2(496, 252)
+rotation = 0.514872
+scale = Vector2(0.725, 0.725)
 texture = ExtResource("4_orukj")
 
 [node name="MaratabanPiece4" type="Sprite2D" parent="jarpieces"]
-position = Vector2(539, 256)
+position = Vector2(659, 182)
+rotation = 0.773181
+scale = Vector2(0.71625, 0.71625)
 texture = ExtResource("5_4kteo")
 
 [node name="MaratabanPiece5" type="Sprite2D" parent="jarpieces"]
-position = Vector2(320, 218)
+position = Vector2(244, 183)
+rotation = -0.193732
+scale = Vector2(0.695, 0.695)
 texture = ExtResource("6_h3mue")
 
 [node name="Timer" type="Timer" parent="."]

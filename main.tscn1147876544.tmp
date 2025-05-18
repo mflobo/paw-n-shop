@@ -1,0 +1,180 @@
+[gd_scene load_steps=27 format=3 uid="uid://dukx77fpt5bi"]
+
+[ext_resource type="Script" uid="uid://duditdg7v3g34" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b4td7fa85on8w" path="res://art/PawnShop_forground_v3.png" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://bf2gubdbo1qt" path="res://sprite_2d.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dprjcjyaxwnjp" path="res://customer.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://daothkc6ess78" path="res://art/PawnShop_BackgroundOutside.png" id="3_yaehf"]
+[ext_resource type="Texture2D" uid="uid://ddxit2udctvjg" path="res://art/PawnShop_window_v5.png" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://br6v5ide4lpja" path="res://art/middle_layer_v3.png" id="5_5vw27"]
+[ext_resource type="Script" uid="uid://dwergnwhs1871" path="res://camera_2d.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://ddxb5b34n2x0y" path="res://art/PawnShop_Shadow_1.png" id="7_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://dj8lpkumquj2i" path="res://art/PawnShop_Light_1.png" id="8_w48qg"]
+[ext_resource type="Texture2D" uid="uid://cdlodrvv60xiq" path="res://art/dialoguebox.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://b7r616uu86xvi" path="res://art/PawnShop_String_v5.png" id="9_vivmo"]
+[ext_resource type="Texture2D" uid="uid://5jnrv0vdl7nf" path="res://art/PawnShop_lantern_v5.png" id="10_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://e52pafp2x13u" path="res://art/witchportrait.png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dsqttjoqifsnj" path="res://art/PawnShop_Light_2.png" id="14_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://da81ivh8ei3p6" path="res://art/Paint_Bottles.png" id="15_yaehf"]
+[ext_resource type="Texture2D" uid="uid://coolxw2bq4073" path="res://art/Polish.png" id="16_074og"]
+[ext_resource type="AudioStream" uid="uid://dtsb0twdu0qy5" path="res://sounds/Wood_openWithBell.mp3" id="18_074og"]
+[ext_resource type="AudioStream" uid="uid://cbubqrr8068hi" path="res://sounds/Music&Ambience_STEREO_01.mp3" id="18_getpj"]
+[ext_resource type="AudioStream" uid="uid://c1hnxd7i268qk" path="res://sounds/Footsteps_Witch_02.mp3" id="19_82xsv"]
+[ext_resource type="AudioStream" uid="uid://byctg7oyo4xbe" path="res://sounds/Voice_Witch_01.mp3" id="21_ryguw"]
+[ext_resource type="AudioStream" uid="uid://0mys3wvsnaaw" path="res://sounds/Wood_openNoImpact.mp3" id="22_ryguw"]
+[ext_resource type="PackedScene" uid="uid://c8lyt2pmk8h3r" path="res://hud.tscn" id="23_d13ii"]
+[ext_resource type="PackedScene" uid="uid://c06n2l10eityf" path="res://jar.tscn" id="24_1u8w0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg77c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4c57u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycdy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_efxa6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -3)
+offset = Vector2(0, 10)
+zoom = Vector2(1.02, 1.02)
+script = ExtResource("5_lquwl")
+
+[node name="background_outside" type="Sprite2D" parent="."]
+position = Vector2(74, -175.75)
+scale = Vector2(1, 0.959387)
+texture = ExtResource("3_yaehf")
+offset = Vector2(-120, 0)
+
+[node name="Customer1" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(-922, -163)
+scale = Vector2(3, 3)
+move_speed = 350.0
+move_distance = 1000.0
+
+[node name="background_back" type="Sprite2D" parent="."]
+position = Vector2(963, -5)
+texture = ExtResource("4_272bh")
+
+[node name="background_middle" type="Sprite2D" parent="."]
+position = Vector2(962, 1)
+scale = Vector2(1.00156, 1)
+texture = ExtResource("5_5vw27")
+
+[node name="background_front" type="Sprite2D" parent="."]
+position = Vector2(-964, -539)
+scale = Vector2(1.00234, 1)
+texture = ExtResource("2_1bvp3")
+centered = false
+script = ExtResource("3_1bvp3")
+metadata/_edit_group_ = true
+
+[node name="lantern_workshop" type="Sprite2D" parent="."]
+position = Vector2(2316, -363)
+texture = ExtResource("10_2cqfq")
+flip_h = true
+
+[node name="shadow" type="Sprite2D" parent="."]
+position = Vector2(967, 14)
+texture = ExtResource("7_ycdy4")
+
+[node name="lightshadow" type="Sprite2D" parent="."]
+position = Vector2(964, 0)
+texture = ExtResource("8_w48qg")
+
+[node name="lanternrope" type="Sprite2D" parent="."]
+position = Vector2(60, -383)
+texture = ExtResource("9_vivmo")
+
+[node name="lantern" type="Sprite2D" parent="."]
+position = Vector2(221, -368)
+texture = ExtResource("10_2cqfq")
+
+[node name="ChatWitch" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="WitchChatBox" type="AnimatedSprite2D" parent="ChatWitch"]
+position = Vector2(-879, 237)
+sprite_frames = SubResource("SpriteFrames_dg77c")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChatWitch/WitchChatBox"]
+z_index = 3
+position = Vector2(133.5, 144.5)
+scale = Vector2(0.463942, 0.46283)
+sprite_frames = SubResource("SpriteFrames_ycdy4")
+
+[node name="Witch_1" type="RichTextLabel" parent="ChatWitch/WitchChatBox"]
+anchors_preset = -1
+anchor_left = -0.0460993
+anchor_right = 0.718676
+anchor_bottom = 0.387755
+offset_left = 353.0
+offset_top = 58.0
+offset_right = 393.0
+offset_bottom = 98.0
+theme_override_colors/default_color = Color(0.101961, 0.00784314, 0.0666667, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="light_workshop" type="Sprite2D" parent="."]
+position = Vector2(2947, -3)
+texture = ExtResource("14_2cqfq")
+
+[node name="paint_bottles" type="Sprite2D" parent="."]
+position = Vector2(2443, 149)
+texture = ExtResource("15_yaehf")
+
+[node name="polish" type="Sprite2D" parent="."]
+position = Vector2(2101, 205)
+texture = ExtResource("16_074og")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_getpj")
+volume_db = 0.882
+autoplay = true
+
+[node name="HatchOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_074og")
+volume_db = 3.562
+
+[node name="WitchWalk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_82xsv")
+volume_db = 0.5
+
+[node name="WitchVoice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ryguw")
+
+[node name="PanningSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_ryguw")
+
+[node name="HUD" parent="." instance=ExtResource("23_d13ii")]
+offset = Vector2(10000, -600)
+transform = Transform2D(1, 0, 0, 1, 10000, -600)
+follow_viewport_enabled = true
+
+[node name="fallingJar" type="CanvasLayer" parent="."]
+
+[node name="Jar" parent="fallingJar" instance=ExtResource("24_1u8w0")]
+visible = false
+position = Vector2(487, 596)
+gravity_scale = 1.071
